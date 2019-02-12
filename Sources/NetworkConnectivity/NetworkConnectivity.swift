@@ -1,4 +1,3 @@
-import SystemConfiguration
 import os
 import Network
 
@@ -6,13 +5,13 @@ import Network
 //
 // class BaseViewController: ViewController {
 //     func viewDidLoad() {
-//	       let _ = NetworkConnectivity.shared.setup(with "apple.com")
+//	       let _ = NetworkConnectivity.shared.setup(with "agnosticdev.com")
 //     }
 // }
 // 
 // extension BaseViewController: NetworkConnectivityDelegate {
 //    
-//     func networkStatusChanged(online: Bool, connectivityStatus: String) {
+//     public func networkStatusChanged(online: Bool, connectivityStatus: String) {
 //         if online { 
 //             // handle online status
 //         } else {
