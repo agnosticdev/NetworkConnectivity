@@ -68,11 +68,12 @@ public class NetworkConnectivity {
 
 		self.host = hostURL
 
-		guard let hostURL.count > 0, self.validateHost(hostURL: hostURL) else {
+		guard hostURL.count > 0, self.validateHost(hostURL: hostURL) else {
 			print("Error, invalid host.")
+            return
 		}
 
-		if #available(iOS 12.0, *) {
+		if #available(iOS 12.0, OSX 10.14, *) {
             setupNWConnection()
         } else {
         	print("Network framework only available for iOS 12 or macOS 10.14 or later.")
@@ -88,7 +89,7 @@ public class NetworkConnectivity {
     	return true
     }
 
-	@available(iOS 12.0, *)
+	@available(iOS 12.0, OSX 10.14, *)
     private func setupNWConnection() {
         print("Setting up nwConnection")
         
@@ -100,7 +101,7 @@ public class NetworkConnectivity {
         
     }
 
-    @available(iOS 12.0, *)
+    @available(iOS 12.0, OSX 10.14, *)
     private func stateDidChange(to state: NWConnection.State) {
         switch state {
         case .setup:
@@ -131,7 +132,7 @@ public class NetworkConnectivity {
         }
     }
     
-    @available(iOS 12.0, *)
+    @available(iOS 12.0, OSX 10.14, *)
     private func setupReceive(on connection: NWConnection) {
         connection.receive(minimumIncompleteLength: 1, maximumLength: 65536) { (data, contentContext, isComplete, error) in
             // Read data off the stream
@@ -154,7 +155,7 @@ public class NetworkConnectivity {
         }
     }
 
-    @available(iOS 12.0, *)
+    @available(iOS 12.0, OSX 10.14, *)
     private func sendEndOfStream(connection: NWConnection) {
         connection.send(content: nil, contentContext: .defaultStream, isComplete: true, completion: .contentProcessed({ error in
         	print("sendEndOfStream")
@@ -168,7 +169,7 @@ public class NetworkConnectivity {
     private func notifyDelegateOnChange(newStatusFlag: Bool, connectivityStatus: String) {
     	if newStatusFlag != self.online {
     		print("newStatusFlag: \(newStatusFlag) - connectivityStatus: \(connectivityStatus)")
-    		self.networkStatusDelegate.networkStatusChanged(online: newStatusFlag, connectivityStatus: connectivityStatus)
+    		self.networkStatusDelegate?.networkStatusChanged(online: newStatusFlag, connectivityStatus: connectivityStatus)
     		self.online = newStatusFlag
     	} else {
     		print("connectivityStatus: \(connectivityStatus)")
