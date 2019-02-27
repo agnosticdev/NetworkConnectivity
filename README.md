@@ -8,7 +8,7 @@ In most cases this approach works great. There are some rare conditions that sti
 ```swift 
 class BaseViewController: ViewController {
     func viewDidLoad() {
-        let _ = NetworkConnectivity.shared.setup(with "agnosticdev.com")
+        let _ = NetworkConnectivity.shared.setup(with: "agnosticdev.com")
     }
  }
  
