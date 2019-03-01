@@ -12,6 +12,10 @@
 		301305572212FBBB003582F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301305562212FBBB003582F7 /* Assets.xcassets */; };
 		3013055A2212FBBB003582F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301305582212FBBB003582F7 /* Main.storyboard */; };
 		301305662212FBBB003582F7 /* macOSExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301305652212FBBB003582F7 /* macOSExampleTests.swift */; };
+		30429F8E2228BF33003CE076 /* NetworkConnectivity.h in Headers */ = {isa = PBXBuildFile; fileRef = 30429F8C2228BF33003CE076 /* NetworkConnectivity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30429F912228BF33003CE076 /* NetworkConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30429F8A2228BF32003CE076 /* NetworkConnectivity.framework */; };
+		30429F922228BF33003CE076 /* NetworkConnectivity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30429F8A2228BF32003CE076 /* NetworkConnectivity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30429F982228BF6C003CE076 /* NetworkConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30429F972228BF6B003CE076 /* NetworkConnectivity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,7 +26,28 @@
 			remoteGlobalIDString = 3013054E2212FBB9003582F7;
 			remoteInfo = macOSExample;
 		};
+		30429F8F2228BF33003CE076 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 301305472212FBB9003582F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30429F892228BF32003CE076;
+			remoteInfo = NetworkConnectivity;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		30429F962228BF33003CE076 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				30429F922228BF33003CE076 /* NetworkConnectivity.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3013054F2212FBB9003582F7 /* macOSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macOSExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +60,10 @@
 		301305612212FBBB003582F7 /* macOSExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = macOSExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		301305652212FBBB003582F7 /* macOSExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOSExampleTests.swift; sourceTree = "<group>"; };
 		301305672212FBBB003582F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30429F8A2228BF32003CE076 /* NetworkConnectivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkConnectivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30429F8C2228BF33003CE076 /* NetworkConnectivity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkConnectivity.h; sourceTree = "<group>"; };
+		30429F8D2228BF33003CE076 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30429F972228BF6B003CE076 /* NetworkConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkConnectivity.swift; path = ../../../../Sources/NetworkConnectivity/NetworkConnectivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,10 +71,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30429F912228BF33003CE076 /* NetworkConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3013055E2212FBBB003582F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30429F872228BF32003CE076 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -59,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				301305512212FBB9003582F7 /* macOSExample */,
+				30429F642228BE08003CE076 /* Dependencies */,
 				301305642212FBBB003582F7 /* macOSExampleTests */,
 				301305502212FBB9003582F7 /* Products */,
 			);
@@ -69,6 +107,7 @@
 			children = (
 				3013054F2212FBB9003582F7 /* macOSExample.app */,
 				301305612212FBBB003582F7 /* macOSExampleTests.xctest */,
+				30429F8A2228BF32003CE076 /* NetworkConnectivity.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,7 +134,36 @@
 			path = macOSExampleTests;
 			sourceTree = "<group>";
 		};
+		30429F642228BE08003CE076 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				30429F8B2228BF33003CE076 /* NetworkConnectivity */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		30429F8B2228BF33003CE076 /* NetworkConnectivity */ = {
+			isa = PBXGroup;
+			children = (
+				30429F8C2228BF33003CE076 /* NetworkConnectivity.h */,
+				30429F972228BF6B003CE076 /* NetworkConnectivity.swift */,
+				30429F8D2228BF33003CE076 /* Info.plist */,
+			);
+			path = NetworkConnectivity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		30429F852228BF32003CE076 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30429F8E2228BF33003CE076 /* NetworkConnectivity.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		3013054E2212FBB9003582F7 /* macOSExample */ = {
@@ -105,10 +173,12 @@
 				3013054B2212FBB9003582F7 /* Sources */,
 				3013054C2212FBB9003582F7 /* Frameworks */,
 				3013054D2212FBB9003582F7 /* Resources */,
+				30429F962228BF33003CE076 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				30429F902228BF33003CE076 /* PBXTargetDependency */,
 			);
 			name = macOSExample;
 			productName = macOSExample;
@@ -133,6 +203,24 @@
 			productReference = 301305612212FBBB003582F7 /* macOSExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		30429F892228BF32003CE076 /* NetworkConnectivity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30429F932228BF33003CE076 /* Build configuration list for PBXNativeTarget "NetworkConnectivity" */;
+			buildPhases = (
+				30429F852228BF32003CE076 /* Headers */,
+				30429F862228BF32003CE076 /* Sources */,
+				30429F872228BF32003CE076 /* Frameworks */,
+				30429F882228BF32003CE076 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetworkConnectivity;
+			productName = NetworkConnectivity;
+			productReference = 30429F8A2228BF32003CE076 /* NetworkConnectivity.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,6 +237,9 @@
 					301305602212FBBB003582F7 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 3013054E2212FBB9003582F7;
+					};
+					30429F892228BF32003CE076 = {
+						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
@@ -167,6 +258,7 @@
 			targets = (
 				3013054E2212FBB9003582F7 /* macOSExample */,
 				301305602212FBBB003582F7 /* macOSExampleTests */,
+				30429F892228BF32003CE076 /* NetworkConnectivity */,
 			);
 		};
 /* End PBXProject section */
@@ -188,6 +280,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		30429F882228BF32003CE076 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -196,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				301305552212FBB9003582F7 /* ViewController.swift in Sources */,
+				30429F982228BF6C003CE076 /* NetworkConnectivity.swift in Sources */,
 				301305532212FBB9003582F7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,6 +308,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		30429F862228BF32003CE076 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -215,6 +322,11 @@
 			isa = PBXTargetDependency;
 			target = 3013054E2212FBB9003582F7 /* macOSExample */;
 			targetProxy = 301305622212FBBB003582F7 /* PBXContainerItemProxy */;
+		};
+		30429F902228BF33003CE076 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30429F892228BF32003CE076 /* NetworkConnectivity */;
+			targetProxy = 30429F8F2228BF33003CE076 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -425,6 +537,64 @@
 			};
 			name = Release;
 		};
+		30429F942228BF33003CE076 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = T7FGJ7JWEU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/macOSExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = comCommandLine.NetworkConnectivity;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		30429F952228BF33003CE076 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = T7FGJ7JWEU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/macOSExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = comCommandLine.NetworkConnectivity;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -451,6 +621,15 @@
 			buildConfigurations = (
 				3013056E2212FBBB003582F7 /* Debug */,
 				3013056F2212FBBB003582F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30429F932228BF33003CE076 /* Build configuration list for PBXNativeTarget "NetworkConnectivity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30429F942228BF33003CE076 /* Debug */,
+				30429F952228BF33003CE076 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
