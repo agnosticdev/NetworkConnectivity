@@ -7,13 +7,15 @@
 //
 
 import Cocoa
+import NetworkConnectivity
 
 class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Setup the connectivity status URL here.
+        let _ = NetworkConnectivity.shared.setup(with: "agnosticdev.com")
     }
 
     override var representedObject: Any? {
@@ -25,3 +27,15 @@ class ViewController: NSViewController {
 
 }
 
+
+extension ViewController: NetworkConnectivityDelegate {
+    
+    public func networkStatusChanged(online: Bool, connectivityStatus: String) {
+        if online {
+            // handle online status
+        } else {
+            // handle offline status
+        }
+        print("Online: \(online) connectivityStatus: \(connectivityStatus)")
+    }
+}
