@@ -119,7 +119,6 @@ public class NetworkConnectivity {
             let errorMessage = "Error: \(error.localizedDescription)"
             self.notifyDelegateOnChange(newStatusFlag: false, connectivityStatus: errorMessage)
             self.tcpStreamAlive = false
-            //self.setupNWConnection()
         case .cancelled:
             self.notifyDelegateOnChange(newStatusFlag: false, connectivityStatus: "cancelled")
             self.tcpStreamAlive = false
